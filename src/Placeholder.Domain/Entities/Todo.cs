@@ -29,6 +29,16 @@
 
     public class AnotatedTodo : Todo
     {
+        internal AnotatedTodo(Todo baseTodo)
+        {
+            Id = baseTodo.Id;
+            UserId = baseTodo.UserId;
+            Title = baseTodo.Title;
+            Completed = baseTodo.Completed;
+        }
+
+        protected AnotatedTodo() { }
+
         public string Observation { get; set; } = string.Empty;
     }
 }
