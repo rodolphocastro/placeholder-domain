@@ -1,10 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
+using Placeholder.Worker.Storage;
 
 namespace Placeholder.Worker
 {
@@ -19,6 +19,10 @@ namespace Placeholder.Worker
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
+                    var config = hostContext.Configuration;
+                    services.AddDbContext<WorkerContext>(stp =>
+                        stp.UseSqlite(config.GetConnectionString(nameof(WorkerContext)))
+                    );
                     services.AddHostedService<Worker>();
                 });
     }

@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Placeholder.Worker
 {
-    public class Worker : BackgroundService
+    internal class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
 
