@@ -14,6 +14,6 @@ namespace Placeholder.Domain.Repositories
 
         Task<Todo> Save(Todo todo, CancellationToken ct = default);
 
-        Task Delete(int userId, int todoId, CancellationToken = default);
+        Task Delete(int userId, int todoId, CancellationToken ct = default);
     }
 }
