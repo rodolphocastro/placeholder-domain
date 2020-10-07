@@ -535,3 +535,6 @@ MigrationBackup/
 # End of https://www.gitignore.io/api/dotenv,csharp,visualstudio,visualstudiocode,dotnetcore
 *.db
 **/logs
+
+# Sqlite Databases
+*.sqlite
